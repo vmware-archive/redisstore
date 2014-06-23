@@ -1,0 +1,10 @@
+applications:
+- name: redisstoretspann
+  memory: 512M
+  host: tspannredisstore
+  domain: cfapps.io
+  env: {
+    }
+  services: {
+    }
+  buildpack: https://github.com/spring-io/java-buildpack.git
