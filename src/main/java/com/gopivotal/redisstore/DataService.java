@@ -20,9 +20,16 @@ public class DataService {
 
 	 
 	private final static String template = "Key: %s Value: %s";
+	private final static String viewTemplate = "Key: %s";
 
+	public String retrieveValue(String keyName) {
+		logger.error(String.format(viewTemplate, keyName));
+		
+		return redisTemplate.opsForValue().get(keyName);
+	} 
+	
 	public void storeValue(String keyName, String value) {
-		logger.debug(String.format(template, keyName,value));
+		logger.error(String.format(template, keyName,value));
 		redisTemplate.opsForValue().set(keyName, value);
 	}
 }

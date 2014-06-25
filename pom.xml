@@ -40,12 +40,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-amqp</artifactId>
+	</dependency>
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-spring-service-connector</artifactId>
         <version>1.0.0.RELEASE</version>
     </dependency>
-    <!-- If you intend to deploy the app on Cloud Foundry, add the following -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-cloudfoundry-connector</artifactId>
@@ -60,9 +64,10 @@
        <url>http://repo.spring.io/milestone</url>
      </repository>
 </repositories>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.gopivotal.logme.Application</start-class>
+		<start-class>com.gopivotal.redisstore.Application</start-class>
 		<java.version>1.8</java.version>
 	</properties>
 
