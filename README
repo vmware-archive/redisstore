@@ -1,0 +1,40 @@
+README
+
+1.  Testing
+
+	Store a Key-Value Pair to Redis
+	http://redisstoretspann.cfapps.io/store?name=tim&value=spann
+
+	Retrieve a Key-Value Pair from Redis
+	http://redisstoretspann.cfapps.io/retrieve?name=tim
+
+	
+2.  TODO
+		CF/Spring 4-Boot Best Practices
+		Add rabbitmq receiver
+		Add Spring Unit Testing
+		Add profiles to run locally
+		Add mysql
+		Add GemfireXD
+		Check with tcServer
+		Check with Spring Insight
+		Add AppDynamics
+		Add GreenPlum
+		Add Pivotal HD
+		Break into more microservices
+		Add related project with AngularJS/Bootstrap/HTML5/reactive/mobile GUI
+		Add related Android Project GUI
+
+3.  Documentation
+
+4.  Add to GitHub
+
+5.  Add to Continuous Build server
+
+6.  Add PMD/CheckStyle/EclEmma/FindBugs/...
+
+7.  Add mock tests
+
+8.  Future apps (jHipster), social weather ontop of microservices with charts, big data, 
+	spring social (facebook/twitter/google+), pulling in NOAA weather, spring xd for processing,
+	fancy angularjs GUI; typeahead app for spring lookups; bacon index - pricing.
