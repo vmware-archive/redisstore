@@ -10,10 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration; 
 
 @Configuration
 @ServiceScan
-@EnableAutoConfiguration
+@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class) 
 public class CloudConfig extends AbstractCloudConfig {
 
     @Bean
