@@ -29,7 +29,7 @@ public class DataService {
 	} 
 	
 	public void storeValue(String keyName, String value) {
-		logger.error(String.format(template, keyName,value));
+		logger.info(String.format(template, keyName,value));
 		redisTemplate.opsForValue().set(keyName, value);
 	}
 }

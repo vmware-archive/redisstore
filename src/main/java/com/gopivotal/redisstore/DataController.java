@@ -30,8 +30,8 @@ public class DataController {
     {
     	String value = dataservice.retrieveValue(name);
     	String returnValue = String.format(templateView, name, value);
-    	logger.error(returnValue);
-    	logger.error(System.getenv("VCAP_SERVICES"));
+    	logger.info(returnValue);
+    	//logger.error(System.getenv("VCAP_SERVICES"));
         return value;
     }
 
@@ -43,7 +43,6 @@ public class DataController {
     	dataservice.storeValue(name, value);
     	String returnValue = String.format(template, name);
     	logger.error(returnValue);
-    	logger.error(System.getenv("VCAP_SERVICES"));
     	return returnValue;
     }
 }

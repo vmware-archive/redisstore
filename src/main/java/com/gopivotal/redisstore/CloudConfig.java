@@ -21,17 +21,21 @@ package com.gopivotal.redisstore;
 //import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 //import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 //import org.springframework.beans.factory.annotation.Autowired;
+import javax.sql.DataSource;
+
 import org.springframework.cloud.config.java.AbstractCloudConfig;
 import org.springframework.cloud.config.java.ServiceScan;
 //import org.springframework.cloud.service.messaging.RabbitConnectionFactoryFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 @Configuration
 @ServiceScan
+@EnableJpaRepositories("com.gopivotal.redisstore.model")
 public class CloudConfig extends AbstractCloudConfig {
 
     @Bean
@@ -49,6 +53,12 @@ public class CloudConfig extends AbstractCloudConfig {
     	return new StringRedisTemplate(redisConnectionFactory());
     }
 
+    @Bean
+    public DataSource getDataSource() {
+    	return connectionFactory().dataSource();
+    }
+
+    
 //    @Bean
 //    public ConnectionFactory rabbitConnectionFactory() {
 //        return connectionFactory().rabbitConnectionFactory();
