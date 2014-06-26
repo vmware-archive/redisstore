@@ -18,12 +18,11 @@ public class DataController {
 	@Autowired
 	private DataService dataservice;
 
-	@Autowired
-	private MessageService messageService;
+//	@Autowired
+//	private MessageService messageService;
 	
     private static final String template = "Key: %s";
     private static final String templateView = template +  " Value: %s";
-    private static final String templateMessage = "Sending %s %s";
 
     @RequestMapping("/retrieve")
     public @ResponseBody String retrieve(
@@ -45,7 +44,6 @@ public class DataController {
     	String returnValue = String.format(template, name);
     	logger.error(returnValue);
     	logger.error(System.getenv("VCAP_SERVICES"));
-    	messageService.sendMessage(String.format(templateMessage,name,value));
     	return returnValue;
     }
 }
