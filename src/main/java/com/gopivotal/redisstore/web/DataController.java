@@ -1,13 +1,17 @@
-package com.gopivotal.redisstore;
+package com.gopivotal.redisstore.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.gopivotal.redisstore.service.DataService;
+import com.gopivotal.redisstore.service.DataSourceService;
 
 @Controller
 @RestController
@@ -18,6 +22,9 @@ public class DataController {
 	@Autowired
 	private DataService dataservice;
 
+	@Autowired
+	private DataSourceService dataSourceService;
+	
 //	@Autowired
 //	private MessageService messageService;
 	
@@ -31,6 +38,7 @@ public class DataController {
     	String value = dataservice.retrieveValue(name);
     	String returnValue = String.format(templateView, name, value);
     	logger.info(returnValue);
+    	logger.info(dataSourceService.retrieveValue(name));
     	//logger.error(System.getenv("VCAP_SERVICES"));
         return value;
     }
@@ -42,7 +50,8 @@ public class DataController {
     {
     	dataservice.storeValue(name, value);
     	String returnValue = String.format(template, name);
-    	logger.error(returnValue);
+    	logger.info(returnValue);
+    	dataSourceService.storeValue(name, value);
     	return returnValue;
     }
 }

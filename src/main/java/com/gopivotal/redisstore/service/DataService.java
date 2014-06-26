@@ -1,4 +1,4 @@
-package com.gopivotal.redisstore;
+package com.gopivotal.redisstore.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,6 @@ public class DataService {
 
 	public String retrieveValue(String keyName) {
 		logger.error(String.format(viewTemplate, keyName));
-		
 		return redisTemplate.opsForValue().get(keyName);
 	} 
 	

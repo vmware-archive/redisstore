@@ -1,41 +1,19 @@
 package com.gopivotal.redisstore;
 
-//import javax.sql.DataSource;
-//
-//import org.springframework.amqp.core.Binding;
-//import org.springframework.amqp.core.BindingBuilder;
-//import org.springframework.amqp.core.Queue;
-//import org.springframework.amqp.core.TopicExchange;
-//import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-//import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-//import org.springframework.amqp.rabbit.core.RabbitTemplate;
-//import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-//import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
-//import org.springframework.amqp.core.Binding;
-//import org.springframework.amqp.core.BindingBuilder;
-//import org.springframework.amqp.core.Queue;
-//import org.springframework.amqp.core.TopicExchange;
-//import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-//import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-//import org.springframework.amqp.rabbit.core.RabbitTemplate;
-//import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-//import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
-//import org.springframework.beans.factory.annotation.Autowired;
-import javax.sql.DataSource;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.config.java.AbstractCloudConfig;
 import org.springframework.cloud.config.java.ServiceScan;
 //import org.springframework.cloud.service.messaging.RabbitConnectionFactoryFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 @Configuration
 @ServiceScan
-@EnableJpaRepositories("com.gopivotal.redisstore.model")
+@EnableAutoConfiguration
 public class CloudConfig extends AbstractCloudConfig {
 
     @Bean
@@ -53,12 +31,6 @@ public class CloudConfig extends AbstractCloudConfig {
     	return new StringRedisTemplate(redisConnectionFactory());
     }
 
-    @Bean
-    public DataSource getDataSource() {
-    	return connectionFactory().dataSource();
-    }
-
-    
 //    @Bean
 //    public ConnectionFactory rabbitConnectionFactory() {
 //        return connectionFactory().rabbitConnectionFactory();

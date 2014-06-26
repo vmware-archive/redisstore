@@ -1,4 +1,4 @@
-package com.gopivotal.redisstore.model;
+package com.gopivotal.redisstore.domain;
 
 import java.io.Serializable;
 
