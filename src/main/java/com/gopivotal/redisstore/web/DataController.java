@@ -38,7 +38,7 @@ public class DataController {
     	String value = dataservice.retrieveValue(name);
     	String returnValue = String.format(templateView, name, value);
     	logger.info(returnValue);
-    	logger.info(dataSourceService.retrieveValue(name));
+    	logger.error("DB RETRIEVE: " + dataSourceService.retrieveValue(name));
     	//logger.error(System.getenv("VCAP_SERVICES"));
         return value;
     }
