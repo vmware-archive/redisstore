@@ -1,5 +1,15 @@
 README
 
+0.  Build
+
+	mvn package
+	mvn spring-boot:run
+	
+	cf api api.run.pivotal.io
+	cf login
+	cf push target/redisstore-0.0.6-SNAPSHOT.jar
+	
+
 1.  Testing
 
 	Store a Key-Value Pair to Redis
