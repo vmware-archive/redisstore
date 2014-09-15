@@ -17,7 +17,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class) 
 public class CloudConfig extends AbstractCloudConfig {
 
-    @Bean
+    @Bean 
     public RedisConnectionFactory redisConnectionFactory() {
         return connectionFactory().redisConnectionFactory();
     }

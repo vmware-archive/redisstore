@@ -1,6 +1,0 @@
-applications:
-- name: redisstoretspann
-  memory: 512M
-  host: redisstoretspann
-  domain: cfapps.io
-  buildpack: https://github.com/spring-io/java-buildpack.git
