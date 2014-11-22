@@ -1,4 +1,4 @@
-package com.gopivotal.redisstore;
+package io.pivotal.redisstore;
  
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

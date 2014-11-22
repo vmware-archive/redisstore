@@ -3,11 +3,6 @@ applications:
   memory: 512M
   instances: 1
   host: redisstoretspann
-  domain: cfapps.io
 
   path: target/redisstore-1.0.0-SNAPSHOT.jar
-  services: 
-    - tspannpgsql
-    - tspanntest
-
  

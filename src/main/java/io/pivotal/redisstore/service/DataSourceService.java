@@ -1,4 +1,7 @@
-package com.gopivotal.redisstore.service;
+package io.pivotal.redisstore.service;
+
+import io.pivotal.redisstore.domain.NameValue;
+import io.pivotal.redisstore.domain.NameValueRepository;
 
 import java.util.List;
 
@@ -11,9 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.gopivotal.redisstore.domain.NameValue;
-import com.gopivotal.redisstore.domain.NameValueRepository;
 
 @Component("DataSourceService")
 public class DataSourceService {

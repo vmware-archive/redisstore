@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[3.6.0.201405280551-M1]]></pluginVersion>
+	<pluginVersion><![CDATA[3.6.2.201410090854-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.gopivotal.redisstore.Application</config>
+		<config>java:io.pivotal.redisstore.Application</config>
+		<config>java:io.pivotal.redisstore.CloudConfig</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

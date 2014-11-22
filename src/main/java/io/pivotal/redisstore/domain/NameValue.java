@@ -1,4 +1,4 @@
-package com.gopivotal.redisstore.domain;
+package io.pivotal.redisstore.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

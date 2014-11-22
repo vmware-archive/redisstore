@@ -1,4 +1,4 @@
-package com.gopivotal.redisstore.service;
+package io.pivotal.redisstore.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
