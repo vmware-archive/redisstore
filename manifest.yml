@@ -2,7 +2,7 @@ applications:
 - name: redisstoretspann
   memory: 512M
   instances: 1
-  host: redisstoretspann
+  host: redis
 
   path: target/redisstore-1.0.0-SNAPSHOT.jar
  

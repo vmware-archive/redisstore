@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.8.RELEASE</version>
+		<version>1.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -97,7 +97,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<start-class>io.pivotal.redisstore.Application</start-class>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 		<postgres-driver.version>9.0-801.jdbc4</postgres-driver.version>
 	</properties>
 
