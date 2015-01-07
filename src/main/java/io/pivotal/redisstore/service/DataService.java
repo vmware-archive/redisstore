@@ -18,7 +18,6 @@ public class DataService {
 	@Autowired
 	StringRedisTemplate redisTemplate;
 
-	 
 	private final static String template = "Key: %s Value: %s";
 	private final static String viewTemplate = "Key: %s";
 

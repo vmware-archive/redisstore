@@ -1,7 +1,6 @@
 package io.pivotal.redisstore.web;
 
 import io.pivotal.redisstore.service.DataService;
-import io.pivotal.redisstore.service.DataSourceService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +19,6 @@ public class DataController {
 	 
 	@Autowired
 	private DataService dataservice;
-
-	@Autowired
-	private DataSourceService dataSourceService;
 	
     private static final String template = "Key: %s";
     private static final String templateView = template +  " Value: %s";
@@ -34,8 +30,6 @@ public class DataController {
     	String value = dataservice.retrieveValue(name);
     	String returnValue = String.format(templateView, name, value);
     	logger.info(returnValue);
-    	logger.error("DB RETRIEVE: " + dataSourceService.retrieveValue(name));
-    	logger.error(System.getenv("VCAP_SERVICES"));
         return value;
     }
 
@@ -47,7 +41,6 @@ public class DataController {
     	dataservice.storeValue(name, value);
     	String returnValue = String.format(template, name);
     	logger.info(returnValue);
-    	dataSourceService.storeValue(name, value);
     	return returnValue;
     }
 }
